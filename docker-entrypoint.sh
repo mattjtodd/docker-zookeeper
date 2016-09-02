@@ -19,7 +19,7 @@ if [ "$1" == "start-foreground" ] ; then
         ensemble=true
         ;;
       -id)
-        echo $2 >> data/myid
+        echo $2 > data/myid
         shift 2
         ;;
       *)
@@ -33,8 +33,11 @@ if [ "$1" == "start-foreground" ] ; then
     echo "syncLimit=2" >> conf/zoo.cfg 
   fi
 
-  set -- bin/zkServer.sh start-foreground
+  set -- su-exec zookeeper bin/zkServer.sh start-foreground
 fi
 
 exec "$@"
+
+
+
 
