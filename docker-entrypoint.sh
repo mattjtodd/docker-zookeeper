@@ -14,7 +14,7 @@ if [ "$1" == "start-foreground" ] ; then
   do
     case "$1" in
       -s | --server)
-        echo $2 >> conf/zoo.cfg
+        echo "server.$2" >> conf/zoo.cfg
         shift 2
         ensemble=true
         ;;
