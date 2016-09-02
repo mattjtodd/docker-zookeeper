@@ -18,20 +18,21 @@ docker run -p 2181:2181 utuba/zookeeper
 [Ensemble mode] (https://zookeeper.apache.org/doc/r3.3.3/zookeeperAdmin.html#sc_zkMulitServerSetup) can be configured by defining:
 
 * `-id` to define the node id written to the data/myid an integer 1-255.
-* `-s` or `--server` to define each member of the ensemble.
- 
+* `-p` or `--property` to define a zoo.cfg property-value 
+
 So:
 
 ```
--id <myid> -s <member-myid>=<server-name>:<port>:<port>
+-id <myid> -p <property=value> -p ...
 ```
 
 For example:
 
 ```
-docker run -p 2181:2181 utuba/zookeeper -id 1 -s 1=zookeeper1:2888:3888 -s 2=zookeeper2:2888:3888 -s 3=zookeeper3:2888:3888
+docker run -p 2181:2181 utuba/zookeeper -id 1 -p server.1=zookeeper1:2888:3888
 ```
-
+* `-s` or `--server` to define each member of the ensemble.
+ 
 The compose file illustrates this setup and can be stood up using
 
 ```
