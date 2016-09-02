@@ -1,4 +1,4 @@
-FROM java:openjdk-8-jre-alpine
+FROM openjdk:8u92-jre-alpine
 
 ARG MIRROR=http://mirror.vorboss.net/apache
 ARG VERSION=3.4.8
