@@ -4,7 +4,7 @@ set -e
 
 ZK_VERSION=${1:-3.4.8}
 
-TAG="utuba/zookeeper:$ZK_VERSION"
+TAG="mattjtodd/zookeeper:$ZK_VERSION"
 
 docker build --build-arg VERSION=$ZK_VERSION -t $TAG .
 

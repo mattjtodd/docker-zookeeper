@@ -3,31 +3,31 @@ version: '2.0'
 services:
 
   zookeeper1:
-    image: utuba/zookeeper:latest
+    image: mattjtodd/zookeeper:3.4.8
     ports:
       - "2181:2181"
     command: -id 1 -p server.1=zookeeper1:2888:3888 -p server.2=zookeeper2:2888:3888 -p server.3=zookeeper3:2888:3888 -p server.4=zookeeper4:2888:3888 -p server.5=zookeeper5:2888:3888 -p initLimit=5 -p syncLimit=2
 
   zookeeper2:
-    image: utuba/zookeeper:latest
+    image: mattjtodd/zookeeper:3.4.8
     ports:
       - "2281:2181"
     command: -id 2 -p server.1=zookeeper1:2888:3888 -p server.2=zookeeper2:2888:3888 -p server.3=zookeeper3:2888:3888 -p server.4=zookeeper4:2888:3888 -p server.5=zookeeper5:2888:3888 -p initLimit=5 -p syncLimit=2
 
   zookeeper3:
-    image: utuba/zookeeper:latest
+    image: mattjtodd/zookeeper:3.4.8
     ports:
       - "2381:2181"
     command: -id 3 -p server.1=zookeeper1:2888:3888 -p server.2=zookeeper2:2888:3888 -p server.3=zookeeper3:2888:3888 -p server.4=zookeeper4:2888:3888 -p server.5=zookeeper5:2888:3888 -p initLimit=5 -p syncLimit=2
 
   zookeeper4:
-    image: utuba/zookeeper:latest
+    image: mattjtodd/zookeeper:3.4.8
     ports:
       - "2481:2181"
     command: -id 4 -p server.1=zookeeper1:2888:3888 -p server.2=zookeeper2:2888:3888 -p server.3=zookeeper3:2888:3888 -p server.4=zookeeper4:2888:3888 -p server.5=zookeeper5:2888:3888 -p initLimit=5 -p syncLimit=2
 
   zookeeper5:
-    image: utuba/zookeeper:latest
+    image: mattjtodd/zookeeper:3.4.8
     ports:
       - "2581:2181"
     command: -id 5 -p server.1=zookeeper1:2888:3888 -p server.2=zookeeper2:2888:3888 -p server.3=zookeeper3:2888:3888 -p server.4=zookeeper4:2888:3888 -p server.5=zookeeper5:2888:3888 -p initLimit=5 -p syncLimit=2
