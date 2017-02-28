@@ -10,7 +10,7 @@ For more information about this see the [https://zookeeper.apache.org].
 ## Single Node
 
 ```
-docker run -p 2181:2181 utuba/zookeeper
+docker run -p 2181:2181 mattjtodd/zookeeper
 ```
 
 ## Clustered (Multi-Server) Setup
@@ -29,7 +29,7 @@ So:
 For example:
 
 ```
-docker run -p 2181:2181 utuba/zookeeper -id 1 -p server.1=zookeeper1:2888:3888
+docker run -p 2181:2181 mattjtodd/zookeeper -id 1 -p server.1=zookeeper1:2888:3888
 ```
 * `-s` or `--server` to define each member of the ensemble.
  
